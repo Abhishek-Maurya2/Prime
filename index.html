@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime - Hydration, Energy, Stops Thirst</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&family=Nunito:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="promo-bar">
+        FREE SHIPPING ON ALL ORDERS $60+
+    </div>
+
+    <header class="header" id="header">
+        <div class="header-left">
+            <button class="mobile-menu-btn" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+            <nav class="nav-links">
+                <a href="#" class="nav-link">SHOP <i class="fa-solid fa-chevron-down nav-chevron"></i></a>
+                <a href="#" class="nav-link">ABOUT</a>
+            </nav>
+        </div>
+
+        <div class="header-center">
+            <a href="#" class="logo">
+                <img src="https://drinkprime.com/cdn/shop/files/Prime-Logo_1600x.png?v=1637610173" alt="PRIME"
+                    class="logo-img">
+            </a>
+        </div>
+
+        <div class="header-right">
+            <div class="country-selector icon-link">
+                <span class="flag-icon">US</span> <i class="fa-solid fa-chevron-down nav-chevron"></i>
+            </div>
+            <a href="#" class="icon-link"><svg aria-hidden="true" focusable="false" role="presentation"
+                    class="icon icon-user" viewBox="0 0 64 64" width="22" height="22">
+                    <path
+                        d="M35 39.84v-2.53c3.3-1.91 6-6.66 6-11.41 0-7.3-3-13.82-9-13.82s-9 6.52-9 13.82c0 4.75 2.7 9.51 6 11.41v2.53c-10.18.85-18 6-18 12.16h42c0-6.19-7.82-11.31-18-12.16z"
+                        fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="2.5"></path>
+                </svg></a>
+            <a href="#" class="icon-link"><svg aria-hidden="true" focusable="false" role="presentation"
+                    class="icon icon-search" viewBox="0 0 64 64" width="22" height="22">
+                    <path d="M47.16 28.58A18.58 18.58 0 1 1 28.58 10a18.58 18.58 0 0 1 18.58 18.58zM54 54L41.94 42"
+                        fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="2.5"></path>
+                </svg></a>
+            <a href="#" class="icon-link cart-icon">
+                <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-cart" viewBox="0 0 64 64"
+                    width="22" height="22">
+                    <path d="M14 17.44h46.79l-7.94 25.61H20.96l-9.65-35.1H3" fill="none" stroke="currentColor"
+                        stroke-miterlimit="10" stroke-width="2.5"></path>
+                    <circle cx="27" cy="53" r="2" fill="currentColor"></circle>
+                    <circle cx="47" cy="53" r="2" fill="currentColor"></circle>
+                </svg>
+                <span class="cart-count">0</span>
+            </a>
+            <a href="#" class="btn btn-primary buy-prime-btn d-none-mobile">BUY PRIME</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Slideshow -->
+        <section class="hero slideshow-container">
+            <div class="slide active">
+                <picture>
+                    <source media="(min-width: 768px)"
+                        srcset="https://drinkprime.com/cdn/shop/files/CIT_Web_DropBanner_Desktop_4320x1926_0a351f98-a2d5-452d-bfcd-c1e41a1df434_1600x.jpg?v=1772810176">
+                    <img src="https://drinkprime.com/cdn/shop/files/CIT_Web_DropBanner_Desktop_4320x1926_0a351f98-a2d5-452d-bfcd-c1e41a1df434_1600x.jpg?v=1772810176"
+                        alt="Citrus Tide" class="hero-bg-img">
+                </picture>
+                <div class="slide-content bottom-center fade-up-in">
+                    <div class="hero-actions">
+                        <a href="#" class="btn btn-primary btn-large">SHOP HYDRATION</a>
+                        <a href="#" class="btn btn-outline-white btn-large">LEARN MORE</a>
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <picture>
+                    <div class="hero-bg-img"
+                        style="background: linear-gradient(135deg, #1C1B1B, #333); width: 100%; height: 100%;"></div>
+                </picture>
+                <div class="slide-content center-center fade-up-in">
+                    <h2 style="color:white; font-size:60px; margin-bottom:20px;">ENERGY</h2>
+                    <div class="hero-actions">
+                        <a href="#" class="btn btn-primary btn-large">SHOP ENERGY</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slider-controls">
+                <button class="slider-btn prev-btn" aria-label="Previous slide"><i
+                        class="fa-solid fa-chevron-left"></i></button>
+                <button class="slider-btn next-btn" aria-label="Next slide"><i
+                        class="fa-solid fa-chevron-right"></i></button>
+                <div class="slider-dots">
+                    <span class="dot active" data-index="0"></span>
+                    <span class="dot" data-index="1"></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Collection - Hydration -->
+        <section class="collection-section container scroll-reveal">
+            <div class="section-header">
+                <h2 class="section-title">HYDRATION</h2>
+                <a href="#" class="btn btn-outline-black shop-all-btn">SHOP ALL</a>
+            </div>
+
+            <div class="product-grid">
+                <!-- Blue Raspberry -->
+                <div class="product-card">
+                    <div class="product-image-container gradient-bg-blue">
+                        <img src="https://drinkprime.com/cdn/shop/products/PrimeHydration_1serve_bluerasberry_0000_2000x.png?v=1656076581"
+                            alt="Blue Raspberry" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Blue Raspberry</h3>
+                        <div class="product-price">$29.99</div>
+                        <button class="btn btn-primary w-100 add-to-cart-btn">ADD TO CART</button>
+                    </div>
+                </div>
+
+                <!-- Tropical Punch -->
+                <div class="product-card">
+                    <div class="product-image-container gradient-bg-red">
+                        <img src="https://drinkprime.com/cdn/shop/products/PrimeHydration_1serve_tropicalpunch_0000_1200x.png?v=1656076860"
+                            alt="Tropical Punch" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Tropical Punch</h3>
+                        <div class="product-price">$29.99</div>
+                        <button class="btn btn-primary w-100 add-to-cart-btn">ADD TO CART</button>
+                    </div>
+                </div>
+
+                <!-- Ice Pop -->
+                <div class="product-card">
+                    <div class="product-image-container gradient-bg-grey">
+                        <img src="https://drinkprime.com/cdn/shop/products/PrimeHydration_1serve_IcePop_0000_1200x.png?v=1656076690"
+                            alt="Ice Pop" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Ice Pop</h3>
+                        <div class="product-price">$29.99</div>
+                        <button class="btn btn-primary w-100 add-to-cart-btn">ADD TO CART</button>
+                    </div>
+                </div>
+
+                <!-- Lemon Lime -->
+                <div class="product-card">
+                    <div class="product-image-container gradient-bg-green">
+                        <img src="https://drinkprime.com/cdn/shop/products/PrimeHydration_1serve_lemonlime_0000_1200x.png?v=1656076731"
+                            alt="Lemon Lime" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Lemon Lime</h3>
+                        <div class="product-price">$29.99</div>
+                        <button class="btn btn-primary w-100 add-to-cart-btn">ADD TO CART</button>
+                    </div>
+                </div>
+
+                <!-- Meta Moon -->
+                <div class="product-card">
+                    <div class="product-image-container gradient-bg-purple">
+                        <img src="https://drinkprime.com/cdn/shop/products/Prime-Metamoon-ProductDetail-front_1200x.png?v=1662754165"
+                            alt="Meta Moon" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Meta Moon</h3>
+                        <div class="product-price">$29.99</div>
+                        <button class="btn btn-primary w-100 add-to-cart-btn">ADD TO CART</button>
+                    </div>
+                </div>
+
+                <!-- Strawberry Watermelon -->
+                <div class="product-card">
+                    <div class="product-image-container gradient-bg-pink">
+                        <img src="https://drinkprime.com/cdn/shop/products/Front_1200x.png?v=1672937745"
+                            alt="Strawberry Watermelon" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Strawberry Watermelon</h3>
+                        <div class="product-price">$29.99</div>
+                        <button class="btn btn-primary w-100 add-to-cart-btn">ADD TO CART</button>
+                    </div>
+                </div>
+
+                <!-- Glowberry -->
+                <div class="product-card">
+                    <div class="product-image-container gradient-bg-lime">
+                        <img src="https://drinkprime.com/cdn/shop/files/GB_Product_Page_-_Front_2000x.png?v=1722366864"
+                            alt="Glowberry" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Glowberry</h3>
+                        <div class="product-price">$29.99</div>
+                        <button class="btn btn-primary w-100 add-to-cart-btn">ADD TO CART</button>
+                    </div>
+                </div>
+
+                <!-- Cherry Freeze -->
+                <div class="product-card">
+                    <div class="product-image-container gradient-bg-cyan">
+                        <img src="https://drinkprime.com/cdn/shop/files/Prime_hydration_1serve_16.9oz_US_CherryFreeze_Fortis_00000_1200x.png?v=1745589968"
+                            alt="Cherry Freeze" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Cherry Freeze</h3>
+                        <div class="product-price">$29.99</div>
+                        <button class="btn btn-primary w-100 add-to-cart-btn">ADD TO CART</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Collection - Energy -->
+        <section class="collection-section container scroll-reveal">
+            <div class="section-header">
+                <h2 class="section-title">ENERGY</h2>
+                <a href="#" class="btn btn-outline-black shop-all-btn">SHOP ALL</a>
+            </div>
+
+            <div class="product-grid">
+                <!-- Strawberry Watermelon Energy -->
+                <div class="product-card">
+                    <div class="product-image-container gradient-bg-pink">
+                        <img src="https://drinkprime.com/cdn/shop/products/Front_1200x.png?v=1672937745"
+                            alt="Strawberry Watermelon Energy" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Strawberry Watermelon</h3>
+                        <div class="product-price">$29.99</div>
+                        <button class="btn btn-primary w-100 add-to-cart-btn">ADD TO CART</button>
+                    </div>
+                </div>
+
+                <!-- Blue Raspberry Energy -->
+                <div class="product-card">
+                    <div class="product-image-container gradient-bg-blue">
+                        <img src="https://drinkprime.com/cdn/shop/products/PrimeHydration_1serve_bluerasberry_0000_2000x.png?v=1656076581"
+                            alt="Blue Raspberry Energy" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Blue Raspberry</h3>
+                        <div class="product-price">$29.99</div>
+                        <button class="btn btn-primary w-100 add-to-cart-btn">ADD TO CART</button>
+                    </div>
+                </div>
+
+                <!-- Tropical Punch Energy -->
+                <div class="product-card">
+                    <div class="product-image-container gradient-bg-red">
+                        <img src="https://drinkprime.com/cdn/shop/products/PrimeHydration_1serve_tropicalpunch_0000_1200x.png?v=1656076860"
+                            alt="Tropical Punch Energy" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Tropical Punch</h3>
+                        <div class="product-price">$29.99</div>
+                        <button class="btn btn-primary w-100 add-to-cart-btn">ADD TO CART</button>
+                    </div>
+                </div>
+
+                <!-- Lemon Lime Energy -->
+                <div class="product-card">
+                    <div class="product-image-container gradient-bg-green">
+                        <img src="https://drinkprime.com/cdn/shop/products/PrimeHydration_1serve_lemonlime_0000_1200x.png?v=1656076731"
+                            alt="Lemon Lime Energy" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Lemon Lime</h3>
+                        <div class="product-price">$29.99</div>
+                        <button class="btn btn-primary w-100 add-to-cart-btn">ADD TO CART</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Marquee / Text Crawler -->
+        <section class="marquee-section overflow-hidden py-10">
+            <div class="marquee-wrapper">
+                <div class="marquee-content">
+                    <span>STOPS THIRST.</span>
+                    <span class="dot">•</span>
+                    <span>FLAVOR OUT LOUD.</span>
+                    <span class="dot">•</span>
+                    <span>NO ARTIFICIAL COLORS.</span>
+                    <span class="dot">•</span>
+                    <span>10% COCONUT WATER.</span>
+                    <span class="dot">•</span>
+                    <span>STOPS THIRST.</span>
+                    <span class="dot">•</span>
+                    <span>FLAVOR OUT LOUD.</span>
+                    <span class="dot">•</span>
+                    <span>NO ARTIFICIAL COLORS.</span>
+                    <span class="dot">•</span>
+                    <span>10% COCONUT WATER.</span>
+                </div>
+                <div class="marquee-content" aria-hidden="true">
+                    <span>STOPS THIRST.</span>
+                    <span class="dot">•</span>
+                    <span>FLAVOR OUT LOUD.</span>
+                    <span class="dot">•</span>
+                    <span>NO ARTIFICIAL COLORS.</span>
+                    <span class="dot">•</span>
+                    <span>10% COCONUT WATER.</span>
+                    <span class="dot">•</span>
+                    <span>STOPS THIRST.</span>
+                    <span class="dot">•</span>
+                    <span>FLAVOR OUT LOUD.</span>
+                    <span class="dot">•</span>
+                    <span>NO ARTIFICIAL COLORS.</span>
+                    <span class="dot">•</span>
+                    <span>10% COCONUT WATER.</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-newsletter">
+                    <h3>GET EXCLUSIVE ACCESS</h3>
+                    <p>Enter your email below to get the inside scoop on drops, giveaways, and exclusive events.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your Email" required>
+                        <button type="submit" class="btn btn-square"><i class="fa-solid fa-arrow-right"></i></button>
+                    </form>
+                </div>
+                <div class="footer-links-grid">
+                    <div class="footer-col">
+                        <h4>SHOP</h4>
+                        <ul class="footer-links">
+                            <li><a href="#">Hydration</a></li>
+                            <li><a href="#">Hydration+ Sticks</a></li>
+                            <li><a href="#">Energy</a></li>
+                            <li><a href="#">Merch</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>ABOUT</h4>
+                        <ul class="footer-links">
+                            <li><a href="#">Our Story</a></li>
+                            <li><a href="#">Store Locator</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-socials">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+                <div class="footer-legal">
+                    <div class="legal-links">
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Accessibility</a>
+                    </div>
+                    <p class="copyright">&copy; 2024 Prime Hydration LLC. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
