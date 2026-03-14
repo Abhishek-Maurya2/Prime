@@ -4,8 +4,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prime - Hydration, Energy, Stops Thirst</title>
-    <meta name="description" content="Prime Hydration energy drinks and hydration products">
+    <title>PRIME | Hydration and Energy Drinks | Refresh, Replenish, Refuel</title>
+    <meta name="description"
+        content="PRIME was developed to fill the void where great taste meets function. Explore our Hydration and Energy collections with 10% coconut water and 200mg caffeine.">
+    <meta name="keywords" content="PRIME, Logan Paul, KSI, hydration, energy drink, electrolytes, coconut water">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://abhishek-maurya2.github.io/Prime/">
+    <meta property="og:title" content="PRIME | Hydration and Energy Drinks">
+    <meta property="og:description"
+        content="PRIME was developed to fill the void where great taste meets function. Bold flavors, refresh, replenish, refuel.">
+    <meta property="og:image" content="https://drinkprime.com/cdn/shop/files/Prime-Logo_1600x.png?v=1637610173">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://abhishek-maurya2.github.io/Prime/">
+    <meta property="twitter:title" content="PRIME | Hydration and Energy Drinks">
+    <meta property="twitter:description"
+        content="PRIME was developed to fill the void where great taste meets function. Bold flavors, refresh, replenish, refuel.">
+    <meta property="twitter:image" content="https://drinkprime.com/cdn/shop/files/Prime-Logo_1600x.png?v=1637610173">
+
+    <!-- JSON-LD Organization Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "PRIME Hydration",
+      "url": "https://abhishek-maurya2.github.io/Prime/",
+      "logo": "https://drinkprime.com/cdn/shop/files/Prime-Logo_1600x.png?v=1637610173",
+      "sameAs": [
+        "https://www.instagram.com/drinkprime/",
+        "https://www.tiktok.com/@drinkprime",
+        "https://twitter.com/drinkprime"
+      ]
+    }
+    </script>
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -96,8 +130,10 @@
             </div>
             <div class="slide">
                 <picture>
-                    <div class="hero-bg-img"
-                        style="background: linear-gradient(135deg, #1C1B1B, #333); width: 100%; height: 100%;"></div>
+                    <source media="(min-width: 768px)"
+                        srcset="https://drinkprime.com/cdn/shop/files/Protein_Web_DropBanner_Desktop_4320x1926_d3b0adf7-9d70-4859-824c-fa4c5fc22867_1200x.jpg?v=1768572485">
+                    <img src="https://drinkprime.com/cdn/shop/files/Protein_Web_DropBanner_Desktop_4320x1926_d3b0adf7-9d70-4859-824c-fa4c5fc22867_1200x.jpg?v=1768572485"
+                        alt="PRIME Protein" class="hero-bg-img">
                 </picture>
                 <div class="slide-content center-center fade-up-in">
                     <h2 style="color:white; font-size:60px; margin-bottom:20px;">ENERGY</h2>
@@ -128,7 +164,7 @@
 
             <div class="product-grid">
                 <!-- Blue Raspberry -->
-                <div class="product-card" onclick="window.location.href='product.html'">
+                <div class="product-card" onclick="window.location.href='product.html?id=blue-raspberry'">
                     <div class="product-image-container gradient-bg-blue">
                         <img src="https://drinkprime.com/cdn/shop/products/PrimeHydration_1serve_bluerasberry_0000_2000x.png?v=1656076581"
                             alt="Blue Raspberry" class="product-img">
@@ -141,7 +177,7 @@
                 </div>
 
                 <!-- Tropical Punch -->
-                <div class="product-card">
+                <div class="product-card" onclick="window.location.href='product.html?id=tropical-punch'">
                     <div class="product-image-container gradient-bg-red">
                         <img src="https://drinkprime.com/cdn/shop/products/PrimeHydration_1serve_tropicalpunch_0000_1200x.png?v=1656076860"
                             alt="Tropical Punch" class="product-img">
@@ -154,7 +190,7 @@
                 </div>
 
                 <!-- Ice Pop -->
-                <div class="product-card">
+                <div class="product-card" onclick="window.location.href='product.html?id=ice-pop'">
                     <div class="product-image-container gradient-bg-grey">
                         <img src="https://drinkprime.com/cdn/shop/products/PrimeHydration_1serve_IcePop_0000_1200x.png?v=1656076690"
                             alt="Ice Pop" class="product-img">
@@ -167,7 +203,7 @@
                 </div>
 
                 <!-- Lemon Lime -->
-                <div class="product-card">
+                <div class="product-card" onclick="window.location.href='product.html?id=lemon-lime'">
                     <div class="product-image-container gradient-bg-green">
                         <img src="https://drinkprime.com/cdn/shop/products/PrimeHydration_1serve_lemonlime_0000_1200x.png?v=1656076731"
                             alt="Lemon Lime" class="product-img">
@@ -180,7 +216,7 @@
                 </div>
 
                 <!-- Meta Moon -->
-                <div class="product-card">
+                <div class="product-card" onclick="window.location.href='product.html?id=meta-moon'">
                     <div class="product-image-container gradient-bg-purple">
                         <img src="https://drinkprime.com/cdn/shop/products/Prime-Metamoon-ProductDetail-front_1200x.png?v=1662754165"
                             alt="Meta Moon" class="product-img">
@@ -193,7 +229,7 @@
                 </div>
 
                 <!-- Strawberry Watermelon -->
-                <div class="product-card">
+                <div class="product-card" onclick="window.location.href='product.html?id=strawberry-watermelon'">
                     <div class="product-image-container gradient-bg-pink">
                         <img src="https://drinkprime.com/cdn/shop/products/Front_1200x.png?v=1672937745"
                             alt="Strawberry Watermelon" class="product-img">
@@ -206,7 +242,7 @@
                 </div>
 
                 <!-- Glowberry -->
-                <div class="product-card">
+                <div class="product-card" onclick="window.location.href='product.html?id=glowberry'">
                     <div class="product-image-container gradient-bg-lime">
                         <img src="https://drinkprime.com/cdn/shop/files/GB_Product_Page_-_Front_2000x.png?v=1722366864"
                             alt="Glowberry" class="product-img">
@@ -219,7 +255,7 @@
                 </div>
 
                 <!-- Cherry Freeze -->
-                <div class="product-card">
+                <div class="product-card" onclick="window.location.href='product.html?id=cherry-freeze'">
                     <div class="product-image-container gradient-bg-cyan">
                         <img src="https://drinkprime.com/cdn/shop/files/Prime_hydration_1serve_16.9oz_US_CherryFreeze_Fortis_00000_1200x.png?v=1745589968"
                             alt="Cherry Freeze" class="product-img">
@@ -242,7 +278,7 @@
 
             <div class="product-grid">
                 <!-- Strawberry Watermelon Energy -->
-                <div class="product-card">
+                <div class="product-card" onclick="window.location.href='product.html?id=energy-strawberry-watermelon'">
                     <div class="product-image-container gradient-bg-pink">
                         <img src="https://drinkprime.com/cdn/shop/products/Front_1200x.png?v=1672937745"
                             alt="Strawberry Watermelon Energy" class="product-img">
@@ -255,7 +291,7 @@
                 </div>
 
                 <!-- Blue Raspberry Energy -->
-                <div class="product-card">
+                <div class="product-card" onclick="window.location.href='product.html?id=energy-blue-raspberry'">
                     <div class="product-image-container gradient-bg-blue">
                         <img src="https://drinkprime.com/cdn/shop/products/PrimeHydration_1serve_bluerasberry_0000_2000x.png?v=1656076581"
                             alt="Blue Raspberry Energy" class="product-img">
@@ -268,7 +304,7 @@
                 </div>
 
                 <!-- Tropical Punch Energy -->
-                <div class="product-card">
+                <div class="product-card" onclick="window.location.href='product.html?id=energy-tropical-punch'">
                     <div class="product-image-container gradient-bg-red">
                         <img src="https://drinkprime.com/cdn/shop/products/PrimeHydration_1serve_tropicalpunch_0000_1200x.png?v=1656076860"
                             alt="Tropical Punch Energy" class="product-img">
@@ -281,7 +317,7 @@
                 </div>
 
                 <!-- Lemon Lime Energy -->
-                <div class="product-card">
+                <div class="product-card" onclick="window.location.href='product.html?id=energy-lemon-lime'">
                     <div class="product-image-container gradient-bg-green">
                         <img src="https://drinkprime.com/cdn/shop/products/PrimeHydration_1serve_lemonlime_0000_1200x.png?v=1656076731"
                             alt="Lemon Lime Energy" class="product-img">

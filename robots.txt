@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://abhishek-maurya2.github.io/Prime/sitemap.xml

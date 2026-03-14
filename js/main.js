@@ -113,28 +113,106 @@ document.addEventListener('DOMContentLoaded', () => {
         resetInterval();
     }
 
+    // --- GLOBAL INTERACTION TRACKING ---
+    // Track EVERY button and link click
+    document.addEventListener("click", function(e) {
+        const target = e.target.closest('a, button');
+        if (target) {
+            const isButton = target.tagName.toLowerCase() === 'button';
+            const text = target.innerText.trim() || target.getAttribute('aria-label') || 'Icon/Image';
+            const identifier = target.id || target.className || 'no-id-class';
+            
+            if (typeof gtag === 'function') {
+                gtag('event', 'click_interaction', {
+                    event_category: isButton ? 'button' : 'link',
+                    event_label: text,
+                    element_id: identifier,
+                    page_path: window.location.pathname
+                });
+            }
+        }
+    });
+
+    // --- CART & SPECIFIC EVENT TRACKING ---
+
+    // Initialize Cart Count from LocalStorage
+    let cartCount = parseInt(localStorage.getItem('cartCount')) || 0;
+    const updateCartUI = () => {
+        const counts = document.querySelectorAll('.cart-count');
+        counts.forEach(c => {
+            c.innerText = cartCount;
+            c.style.display = cartCount > 0 ? 'flex' : 'none';
+        });
+    };
+    updateCartUI();
+
     // Track Add-to-Cart Button
     document.querySelectorAll(".add-to-cart-btn").forEach(btn => {
         btn.addEventListener("click", function() {
-            gtag('event', 'add_to_cart', {
-                event_category: 'ecommerce',
-                event_label: 'prime_product'
-            });
+            // Logic: Increment count
+            cartCount++;
+            localStorage.setItem('cartCount', cartCount);
+            updateCartUI();
+
+            // GA4 Tracking
+            if (typeof gtag === 'function') {
+                gtag('event', 'add_to_cart', {
+                    event_category: 'ecommerce',
+                    event_label: 'prime_product'
+                });
+            }
+            
+            // Feedback
+            const originalText = this.innerText;
+            this.innerText = "ADDED!";
+            this.style.background = "#000";
+            setTimeout(() => {
+                this.innerText = originalText;
+                this.style.background = "";
+            }, 1500);
         });
     });
 
     // Track Buy Prime Button
     document.querySelector(".buy-prime-btn")?.addEventListener("click", function(){
-        gtag('event', 'buy_prime_click', {
-            event_category: 'engagement'
-        });
+        if (typeof gtag === 'function') {
+            gtag('event', 'buy_prime_click', {
+                event_category: 'engagement'
+            });
+        }
+    });
+
+    // Track Shop Buttons (Hero and Nav)
+    document.querySelectorAll(".shop-all-btn, .nav-link, .btn-large").forEach(link => {
+        if (link.innerText.toLowerCase().includes('shop')) {
+            link.addEventListener("click", function() {
+                if (typeof gtag === 'function') {
+                    gtag('event', 'shop_click', {
+                        event_category: 'engagement',
+                        event_label: this.innerText
+                    });
+                }
+            });
+        }
+    });
+
+    // Track Cart Icon/Button click
+    document.querySelector(".cart-icon")?.addEventListener("click", function() {
+        if (typeof gtag === 'function') {
+            gtag('event', 'view_cart', {
+                event_category: 'engagement'
+            });
+        }
     });
 
     // Track Newsletter Signup
-    document.querySelector(".newsletter-form")?.addEventListener("submit", function(){
-        gtag('event', 'newsletter_signup', {
-            event_category: 'lead_generation'
-        });
+    document.querySelector(".newsletter-form")?.addEventListener("submit", function(e){
+        // e.preventDefault(); // Uncomment if you want to handle it purely via JS
+        if (typeof gtag === 'function') {
+            gtag('event', 'newsletter_signup', {
+                event_category: 'lead_generation'
+            });
+        }
     });
 
 });

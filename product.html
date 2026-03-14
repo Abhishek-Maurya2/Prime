@@ -125,17 +125,15 @@
     </header>
 
     <main class="container">
-        <div class="product-page-grid">
-            <div class="product-gallery scroll-reveal">
-                <img src="https://drinkprime.com/cdn/shop/products/PrimeHydration_1serve_bluerasberry_0000_2000x.png?v=1656076581" alt="Blue Raspberry">
+        <div id="product-page-content" class="product-page-grid" style="display: none;">
+            <div id="product-gallery" class="product-gallery scroll-reveal">
+                <img id="product-image" src="" alt="Product Image">
             </div>
             <div class="product-details scroll-reveal">
-                <span class="product-category">Hydration</span>
-                <h1>BLUE RASPBERRY</h1>
-                <div class="product-price-large">$29.99</div>
-                <div class="product-description">
-                    Prime was developed to fill the void where great taste meets function. With bold, thirst-quenching flavors to help you refresh, replenish, and refuel, Prime is the perfect boost for any endeavor.
-                </div>
+                <span id="product-category" class="product-category"></span>
+                <h1 id="product-title"></h1>
+                <div id="product-price" class="product-price-large"></div>
+                <div id="product-description" class="product-description"></div>
                 
                 <div class="quantity-selector">
                     <button class="qty-btn" onclick="updateQty(-1)">-</button>
@@ -146,15 +144,16 @@
                 <button class="btn btn-primary btn-large w-100 add-to-cart-btn" style="border-radius: 4px;">ADD TO CART</button>
                 
                 <div style="margin-top: 40px; padding-top: 30px; border-top: 1px solid var(--border-color);">
-                    <h3 style="font-size: 14px; margin-bottom: 15px;">PRODUCT HIGHLIGHTS</h3>
-                    <ul style="color: #666; font-size: 14px; line-height: 2;">
-                        <li><i class="fa-solid fa-check" style="color: black; margin-right: 10px;"></i> 10% Coconut Water</li>
-                        <li><i class="fa-solid fa-check" style="color: black; margin-right: 10px;"></i> 825mg Electrolytes</li>
-                        <li><i class="fa-solid fa-check" style="color: black; margin-right: 10px;"></i> 250mg BCAAs</li>
-                        <li><i class="fa-solid fa-check" style="color: black; margin-right: 10px;"></i> Antioxidants & B Vitamins</li>
+                    <h3 id="highlights-title" style="font-size: 14px; margin-bottom: 15px;">PRODUCT HIGHLIGHTS</h3>
+                    <ul id="product-highlights" style="color: #666; font-size: 14px; line-height: 2;">
                     </ul>
                 </div>
             </div>
+        </div>
+        <div id="product-not-found" style="display: none; text-align: center; padding: 100px 0;">
+            <h1>Product Not Found</h1>
+            <p style="margin-bottom: 30px;">Sorry, the product you are looking for does not exist.</p>
+            <a href="index.html" class="btn btn-primary">Back to Shop</a>
         </div>
     </main>
 
@@ -173,8 +172,72 @@
         </div>
     </footer>
 
+    <script src="js/products.js"></script>
     <script src="js/main.js"></script>
     <script>
+        // Load product data based on ID in URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('id');
+        
+        if (productId && window.productsData && window.productsData[productId]) {
+            const product = window.productsData[productId];
+            
+            // Set basic info
+            document.title = `${product.name} - PRIME`;
+            document.getElementById('product-title').innerText = product.name;
+            document.getElementById('product-category').innerText = product.category;
+            document.getElementById('product-price').innerText = product.price;
+            document.getElementById('product-description').innerText = product.description;
+            document.getElementById('product-image').src = product.image;
+            document.getElementById('product-image').alt = product.name;
+            document.getElementById('product-gallery').style.background = product.bgColor;
+            
+            // Set highlights
+            const highlightsList = document.getElementById('product-highlights');
+            highlightsList.innerHTML = '';
+            product.highlights.forEach(highlight => {
+                const li = document.createElement('li');
+                li.innerHTML = `<i class="fa-solid fa-check" style="color: black; margin-right: 10px;"></i> ${highlight}`;
+                highlightsList.appendChild(li);
+            });
+            
+            // Show content
+            document.getElementById('product-page-content').style.display = 'grid';
+
+            // DYNAMIC SEO: Inject Meta Description and Schema
+            const metaDesc = document.createElement('meta');
+            metaDesc.name = 'description';
+            metaDesc.content = product.description;
+            document.head.appendChild(metaDesc);
+
+            // JSON-LD Product Schema
+            const schemaData = {
+                "@context": "https://schema.org/",
+                "@type": "Product",
+                "name": product.name,
+                "image": [product.image],
+                "description": product.description,
+                "sku": productId,
+                "brand": {
+                    "@type": "Brand",
+                    "name": "PRIME"
+                },
+                "offers": {
+                    "@type": "Offer",
+                    "url": window.location.href,
+                    "priceCurrency": "USD",
+                    "price": product.price.replace('$', ''),
+                    "availability": "https://schema.org/InStock"
+                }
+            };
+            const script = document.createElement('script');
+            script.type = 'application/ld+json';
+            script.text = JSON.stringify(schemaData);
+            document.head.appendChild(script);
+        } else {
+            document.getElementById('product-not-found').style.display = 'block';
+        }
+
         let qty = 1;
         function updateQty(delta) {
             qty = Math.max(1, qty + delta);
