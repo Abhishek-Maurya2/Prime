@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart - PRIME</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&family=Nunito:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="header" id="header">
+        <div class="header-left">
+            <button class="mobile-menu-btn" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+            <nav class="nav-links">
+                <a href="index.html#hydration" class="nav-link">SHOP</a>
+                <a href="about.html" class="nav-link">ABOUT</a>
+            </nav>
+        </div>
+
+        <div class="header-center">
+            <a href="index.html" class="logo">
+                <img src="https://drinkprime.com/cdn/shop/files/Prime-Logo_1600x.png?v=1637610173" alt="PRIME"
+                    class="logo-img">
+            </a>
+        </div>
+
+        <div class="header-right">
+            <a href="cart.html" class="icon-link cart-icon">
+                <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-cart" viewBox="0 0 64 64"
+                    width="22" height="22">
+                    <path d="M14 17.44h46.79l-7.94 25.61H20.96l-9.65-35.1H3" fill="none" stroke="currentColor"
+                        stroke-miterlimit="10" stroke-width="2.5"></path>
+                    <circle cx="27" cy="53" r="2" fill="currentColor"></circle>
+                    <circle cx="47" cy="53" r="2" fill="currentColor"></circle>
+                </svg>
+                <span class="cart-count">0</span>
+            </a>
+        </div>
+    </header>
+
+    <main class="container" style="padding-top: 80px; padding-bottom: 80px;">
+        <h1 style="font-size: 48px; margin-bottom: 40px; text-align: center;">YOUR CART</h1>
+        
+        <div id="cart-container" style="max-width: 900px; margin: 0 auto;">
+            <!-- Empty Cart State -->
+            <div id="empty-cart" style="text-align: center; padding: 50px 0;">
+                <p style="font-size: 20px; color: #666; margin-bottom: 30px;">Your cart is currently empty.</p>
+                <a href="index.html#hydration" class="btn btn-primary">CONTINUE SHOPPING</a>
+            </div>
+
+            <!-- Cart Table (Hidden by default) -->
+            <div id="cart-content" style="display: none;">
+                <div class="cart-items" style="margin-bottom: 40px;">
+                    <!-- Items will be injected here by JS -->
+                </div>
+
+                <div class="cart-summary" style="border-top: 1px solid var(--border-color); padding-top: 30px; text-align: right;">
+                    <div style="font-size: 24px; margin-bottom: 20px;">
+                        <span>SUBTOTAL:</span>
+                        <span id="cart-subtotal" style="font-weight: 900; margin-left: 20px;">$29.99</span>
+                    </div>
+                    <p style="color: #666; margin-bottom: 30px; font-size: 14px;">Shipping & taxes calculated at checkout</p>
+                    <button class="btn btn-primary btn-large w-100">CHECKOUT</button>
+                    <p style="margin-top: 20px; text-align: center;">
+                        <a href="index.html" style="text-decoration: underline;">Continue Shopping</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <div class="footer-socials">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+                <div class="footer-legal">
+                    <p class="copyright">&copy; 2024 Prime Hydration LLC. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Simple logic to show cart content (In a real app, this pulls from localStorage)
+        const cartCount = localStorage.getItem('cartCount') || 0;
+        if (cartCount > 0) {
+            document.getElementById('empty-cart').style.display = 'none';
+            document.getElementById('cart-content').style.display = 'block';
+            
+            // Just a mock item for demonstration
+            const itemsContainer = document.querySelector('.cart-items');
+            itemsContainer.innerHTML = `
+                <div style="display: grid; grid-template-columns: 100px 1fr auto; gap: 20px; align-items: center; padding: 20px 0; border-bottom: 1px solid var(--border-color);">
+                    <div style="background: #f4f4f4; padding: 10px; border-radius: 4px;">
+                        <img src="https://drinkprime.com/cdn/shop/files/PRIME_Hydration_Blue_Raspberry_16.9oz_US_0000_1600x.png?v=1708453482" alt="Product">
+                    </div>
+                    <div>
+                        <h3 style="font-size: 18px; margin: 0;">BLUE RASPBERRY</h3>
+                        <p style="color: #666;">Hydration | 12 Pack</p>
+                    </div>
+                    <div style="text-align: right;">
+                        <p style="font-weight: 900; font-size: 18px;">$29.99</p>
+                        <button style="background: none; border: none; text-decoration: underline; cursor: pointer; color: #999; margin-top: 10px;">Remove</button>
+                    </div>
+                </div>
+            `;
+        }
+    </script>
+</body>
+
+</html>

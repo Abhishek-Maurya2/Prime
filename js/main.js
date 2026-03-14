@@ -113,4 +113,28 @@ document.addEventListener('DOMContentLoaded', () => {
         resetInterval();
     }
 
+    // Track Add-to-Cart Button
+    document.querySelectorAll(".add-to-cart-btn").forEach(btn => {
+        btn.addEventListener("click", function() {
+            gtag('event', 'add_to_cart', {
+                event_category: 'ecommerce',
+                event_label: 'prime_product'
+            });
+        });
+    });
+
+    // Track Buy Prime Button
+    document.querySelector(".buy-prime-btn")?.addEventListener("click", function(){
+        gtag('event', 'buy_prime_click', {
+            event_category: 'engagement'
+        });
+    });
+
+    // Track Newsletter Signup
+    document.querySelector(".newsletter-form")?.addEventListener("submit", function(){
+        gtag('event', 'newsletter_signup', {
+            event_category: 'lead_generation'
+        });
+    });
+
 });
